@@ -18,9 +18,22 @@ package com.sundaytoz.ane
 			}
 		}
 		
+		
+		/**
+		 * 종료 AlertDialg 를 띄웁니다. 
+		 */
 		public function showEndDlg():void
 		{
 			_context.call("showEndDlg");
+		}
+		
+		/**
+		 * 사용자의 휴대폰 디바이스 정보(전화번호, 모델명)을 받아옵니다.
+		 * @return 정보가 포함된 Array
+		 */
+		public function getDeviceInfo():Array
+		{
+			return _context.call("showDeviceInfo") as Array;
 		}
 	}
 }
