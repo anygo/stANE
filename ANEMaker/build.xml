@@ -1,0 +1,19 @@
+<project name="Build ANE" default="all">
+     
+    <target name="all" >
+        <property name="SDK_PATH" value="C:\Program Files\Adobe\Adobe Flash Builder 4.7 (64 Bit)\sdks\4.6.0"></property>
+        <property name="ADT" value="${SDK_PATH}/lib/adt.jar"></property>
+         
+        <unzip src="bin/ANEMaker.swc" dest="bin"></unzip>     
+ 
+        <java jar="${ADT}" dir="bin" fork="true" output="build.log">
+            <arg value="-package"></arg>
+            <arg value="-target"></arg>
+            <arg value="ane"></arg>
+            <arg value="DeviceExtension.ane"></arg>
+            <arg value="extension.xml"></arg>
+            <arg line="-swc ANEMaker.swc"/>
+            <arg line="-platform Android-ARM library.swf DeviceExtension.jar"/>
+        </java>       
+    </target> 
+</project>
