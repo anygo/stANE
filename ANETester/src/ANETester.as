@@ -1,20 +1,29 @@
-package com.sundaytoz.ane
+package  
 {
-	import com.sundaytoz.ane.events.ImageResultEvent;
-	import com.sundaytoz.ane.events.VolumeEvent;
+	import com.dynamicflash.util.Base64;
+	import com.sundaytoz.anemaker.AndroidExtension;
+	import com.sundaytoz.anemaker.events.ImageResultEvent;
 	
 	import flash.desktop.NativeApplication;
+	import flash.display.Bitmap;
+	import flash.display.BitmapData;
+	import flash.display.Loader;
+	import flash.display.LoaderInfo;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
+	import flash.events.Event;
 	import flash.events.InvokeEvent;
 	import flash.events.KeyboardEvent;
 	import flash.text.TextField;
 	import flash.ui.Keyboard;
+	import flash.utils.ByteArray;
+	
 	
 	public class ANETester extends Sprite
 	{
-		private var _deviceExtension:DeviceExtension;
+		private var _deviceExtension:AndroidExtension;
+		private var _bmp:Bitmap;
 		
 		public function ANETester()
 		{
@@ -24,10 +33,9 @@ package com.sundaytoz.ane
 			stage.align = StageAlign.TOP_LEFT;
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			
-			_deviceExtension = new DeviceExtension();
+			_deviceExtension = new AndroidExtension();
 			
 			NativeApplication.nativeApplication.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown, false, 0, true);
-			NativeApplication.nativeApplication.addEventListener(InvokeEvent.INVOKE, onInvoke);
 			
 			// 디바이스 정보를 알아옴
 			var deviceInfo:Array = _deviceExtension.getDeviceInfo();
@@ -42,27 +50,31 @@ package com.sundaytoz.ane
 			_deviceExtension.getImageFromAlbum();
 			
 			_deviceExtension.addEventListener(ImageResultEvent.IMAGE_SELECTED, onImageSelected);
-			
-//			VolumeController.instance.setVolume(3);
-//			trace(VolumeController.instance.systemVolume);
-//			
-//			VolumeController.instance.addEventListener(VolumeEvent.VOLUME_CHANGED, onVolumeChanged);
-		}
-		
-		private function onInvoke(event:InvokeEvent):void
-		{
-			trace(event.arguments.length);
-			//trace(event.arguments);		
 		}
 		
 		private function onImageSelected(event:ImageResultEvent):void
 		{
 			trace(event.imageString);
+
+			var byteArr:ByteArray = new ByteArray();
+			byteArr.writeUTFBytes(event.imageString);
+			
+			var decodedArray:ByteArray = Base64.decodeToByteArray(event.imageString);
+					
+			var loader:Loader = new Loader();
+			loader.loadBytes(byteArr);
+			loader.contentLoaderInfo.addEventListener(Event.COMPLETE, onComplete);
 		}
 		
-		private function onVolumeChanged(event:VolumeEvent):void
+		private function onComplete(event:Event):void
 		{
-			trace(event.toString());
+			var loaderInfo:LoaderInfo = LoaderInfo(event.target);
+			var bitmapData:BitmapData = new BitmapData(loaderInfo.width, loaderInfo.height, false, 0xFFFFFF);
+			bitmapData.draw(loaderInfo.loader);
+			_bmp = new Bitmap(bitmapData);
+			
+			addChild(_bmp);
+			
 		}
 		
 		private function onKeyDown(event:KeyboardEvent):void

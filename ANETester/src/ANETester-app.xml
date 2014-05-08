@@ -15,7 +15,7 @@
 
 	<!-- A universally unique application identifier. Must be unique across all AIR applications.
 	Using a reverse DNS-style name as the id is recommended. (Eg. com.example.ExampleApplication.) Required. -->
-	<id>ANETester</id>
+	<id>com.sundaytoz.ane.ANETester</id>
 
 	<!-- Used as the filename for the application. Required. -->
 	<filename>ANETester</filename>
@@ -266,7 +266,7 @@
 <android>
         <manifestAdditions><![CDATA[
 			<manifest android:installLocation="auto">
-				<application android:debuggable="true"/>
+				
 			
 			    <!--See the Adobe AIR documentation for more information about setting Google Android permissions-->
 			    <!--Removing the permission android.permission.INTERNET will have the side effect
@@ -285,6 +285,13 @@
 		together in order to use AIR's NetworkInfo APIs-->
 			    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>-->
 			    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>-->
+			    
+			
+				<application android:enabled="true">
+
+                    <activity android:name="com.sundaytoz.ane.DummyActivity" android:label="dummy_activity"/>
+                </application>
+			    
 			</manifest>
 			
 		]]></manifestAdditions>
