@@ -3,6 +3,8 @@ package com.sundaytoz.ane;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.content.Intent;
+
 import com.adobe.fre.FREContext;
 import com.adobe.fre.FREFunction;
 import com.sundaytoz.ane.functions.BackButtonFunction;
@@ -26,6 +28,14 @@ public class AndroidContext extends FREContext {
         map.put("getImageFromAlbum", new GetImageFunction());
         
 		return map;
+	}
+	
+	public void getImageFromAlbum()
+	{
+        dispatchStatusEventAsync("debugging", "getImageFromAlbum()");
+
+		Intent intent = new Intent(getActivity().getApplicationContext(), DummyActivity.class);
+		getActivity().startActivity(intent);
 	}
 
 }
