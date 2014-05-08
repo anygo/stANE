@@ -1,16 +1,16 @@
-package com.sundaytoz.ane
+package com.sundaytoz.anemaker
 {
-	import com.sundaytoz.ane.events.ImageResultEvent;
+	import com.sundaytoz.anemaker.events.ImageResultEvent;
 	
 	import flash.events.EventDispatcher;
 	import flash.events.StatusEvent;
 	import flash.external.ExtensionContext;
 
-	public class DeviceExtension extends EventDispatcher
+	public class AndroidExtension extends EventDispatcher
 	{
 		private var _context:ExtensionContext;
 		
-		public function DeviceExtension()
+		public function AndroidExtension()
 		{
 			try
 			{

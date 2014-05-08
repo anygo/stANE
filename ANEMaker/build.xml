@@ -10,10 +10,10 @@
             <arg value="-package"></arg>
             <arg value="-target"></arg>
             <arg value="ane"></arg>
-            <arg value="DeviceExtension.ane"></arg>
+            <arg value="AndroidExtension.ane"></arg>
             <arg value="extension.xml"></arg>
             <arg line="-swc ANEMaker.swc"/>
-            <arg line="-platform Android-ARM library.swf DeviceExtension.jar"/>
+            <arg line="-platform Android-ARM library.swf AndroidExtension.jar"/>
         </java>       
     </target> 
 </project>
