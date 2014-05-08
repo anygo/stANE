@@ -5,9 +5,9 @@ import java.util.Map;
 
 import com.adobe.fre.FREContext;
 import com.adobe.fre.FREFunction;
-import com.sundaytoz.zne.functions.BackButtonFunction;
-import com.sundaytoz.zne.functions.DeviceInfoFunction;
-import com.sundaytoz.zne.functions.GetImageFunction;
+import com.sundaytoz.ane.functions.BackButtonFunction;
+import com.sundaytoz.ane.functions.DeviceInfoFunction;
+import com.sundaytoz.ane.functions.GetImageFunction;
 
 public class AndroidContext extends FREContext {
 
