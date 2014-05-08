@@ -31,6 +31,7 @@ package com.sundaytoz.anemaker
 				return;
 				
 			}
+			
 			var result:String = event.level;
 			trace(result);
 			
