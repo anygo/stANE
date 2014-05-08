@@ -1,4 +1,4 @@
-package functions;
+package com.sundaytoz.zne.functions;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -17,7 +17,7 @@ public class BackButtonFunction implements FREFunction{
 		
 		new AlertDialog.Builder(activity)
 			.setTitle("Quit")
-			.setMessage("Á¾·áÇÏ½Ã°Ú½À´Ï±î?")
+			.setMessage("ì¢…ë£Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?")
 			.setPositiveButton("Yes", new DialogInterface.OnClickListener()
 			{
 				@Override

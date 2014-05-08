@@ -1,4 +1,4 @@
-package functions;
+package com.sundaytoz.zne.functions;
 
 import android.content.Context;
 import android.os.Build;

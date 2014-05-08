@@ -1,8 +1,12 @@
 package com.sundaytoz.ane
 {
+	import com.sundaytoz.ane.events.ImageResultEvent;
+	
+	import flash.events.EventDispatcher;
+	import flash.events.StatusEvent;
 	import flash.external.ExtensionContext;
 
-	public class DeviceExtension
+	public class DeviceExtension extends EventDispatcher
 	{
 		private var _context:ExtensionContext;
 		
@@ -11,11 +15,26 @@ package com.sundaytoz.ane
 			try
 			{
 				_context = ExtensionContext.createExtensionContext("com.sundaytoz.ane.ANEMaker", null);
+				_context.addEventListener(StatusEvent.STATUS, onStatus);
 			}
 			catch(e:Error)
 			{
 				trace(e.message);
 			}
+		}
+		
+		private function onStatus( event:StatusEvent ):void {
+						
+			if( event.code == "debugging" )
+			{
+				trace(event.level);
+				return;
+				
+			}
+			var result:String = event.level;
+			trace(result);
+			
+			dispatchEvent( new ImageResultEvent( ImageResultEvent.IMAGE_SELECTED, result, false, false ) );
 		}
 		
 		
@@ -34,6 +53,11 @@ package com.sundaytoz.ane
 		public function getDeviceInfo():Array
 		{
 			return _context.call("showDeviceInfo") as Array;
+		}
+		
+		public function getImageFromAlbum():void
+		{
+			_context.call("getImageFromAlbum");
 		}
 	}
 }

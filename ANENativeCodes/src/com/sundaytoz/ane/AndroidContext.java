@@ -5,11 +5,11 @@ import java.util.Map;
 
 import com.adobe.fre.FREContext;
 import com.adobe.fre.FREFunction;
+import com.sundaytoz.zne.functions.BackButtonFunction;
+import com.sundaytoz.zne.functions.DeviceInfoFunction;
+import com.sundaytoz.zne.functions.GetImageFunction;
 
-import functions.BackButtonFunction;
-import functions.DeviceInfoFunction;
-
-public class ANEContext extends FREContext {
+public class AndroidContext extends FREContext {
 
 	@Override
 	public void dispose() {
@@ -23,6 +23,7 @@ public class ANEContext extends FREContext {
         
         map.put("showEndDlg", new BackButtonFunction());
         map.put("showDeviceInfo", new DeviceInfoFunction());
+        map.put("getImageFromAlbum", new GetImageFunction());
         
 		return map;
 	}
