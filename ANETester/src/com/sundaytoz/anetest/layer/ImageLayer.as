@@ -28,6 +28,9 @@ package com.sundaytoz.anetest.layer
 			init();
 		}
 		
+		/**
+		 * ImageLayer 에 필요한 이미지 및 버튼을 초기화합니다.
+		 */
 		private function init():void
 		{
 			// 사용자가 선택한 이미지가 출력될 Bitmap 초기화
@@ -40,6 +43,9 @@ package com.sundaytoz.anetest.layer
 			initChangeButton();	
 		}
 		
+		/**
+		 * 카메라 버튼을 초기화합니다.
+		 */
 		private function initCameraButton():void
 		{
 			_cameraButton = new Sprite();
@@ -50,6 +56,9 @@ package com.sundaytoz.anetest.layer
 			loadImage(Resources.IMG_CAMERA, initCameraButtonImage);	
 		}
 		
+		/**
+		 * 사진 변경 버튼을 초기화합니다.
+		 */
 		private function initChangeButton():void
 		{
 			// 이미지 변경 버튼 생성
@@ -61,6 +70,9 @@ package com.sundaytoz.anetest.layer
 			loadImage(Resources.IMG_CHANGE_PICTURE, initChangeButtonImage);		
 		}
 		
+		/**
+		 * 카메라 버튼이 눌려졌을 경우 ANE 를 통해 사진을 찍습니다.
+		 */
 		private function onClickCameraButton(event:MouseEvent):void
 		{
 			if( _imagePicker == null )
@@ -72,7 +84,7 @@ package com.sundaytoz.anetest.layer
 		}
 		
 		/**
-		 * 이미지를 변경하기위해 버튼을 눌렀을 경우에 불려집니다.
+		 * 이미지를 변경하기위해 버튼을 ANE을 통해 앨범에서 사진을 불러옵니다.
 		 */
 		private function onClickChangeImage(event:MouseEvent):void
 		{
@@ -105,6 +117,12 @@ package com.sundaytoz.anetest.layer
 			var loaderInfo:LoaderInfo = LoaderInfo(event.target);
 			var bitmapData:BitmapData = new BitmapData(loaderInfo.width, loaderInfo.height, false, 0xFFFFFF);
 			bitmapData.draw(loaderInfo.loader);
+			
+			// 다른 이미지가 있을 경우 삭제
+			if( _image.bitmapData != null )
+			{
+				_image.bitmapData.dispose();
+			}
 			
 			_image.bitmapData = bitmapData;
 			
@@ -157,6 +175,9 @@ package com.sundaytoz.anetest.layer
 			_imageChangeButton.addChild(bmp);
 		}
 		
+		/**
+		 * 앨범에서 아직 사진을 선택한 게 없을 때 출력하는 이미지를 설정합니다.
+		 */
 		private function initInitialImage(event:Event):void
 		{			
 			_image = new Bitmap(Bitmap(LoaderInfo(event.target).content).bitmapData);
@@ -167,9 +188,17 @@ package com.sundaytoz.anetest.layer
 			addChild(_image);
 		}
 		
+		/**
+		 * 사용한 자원을 해제합니다.
+		 */
 		public function clean():void
 		{
 			_imagePicker = null;
+			
+			_image.bitmapData.dispose();
+			_image = null;
+			
+			_cameraButton.removeEventListener(MouseEvent.MOUSE_UP, onClickCameraButton);
 			_imageChangeButton.removeEventListener(MouseEvent.MOUSE_UP, onClickChangeImage);
 		}
 	}

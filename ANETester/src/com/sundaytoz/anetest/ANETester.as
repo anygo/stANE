@@ -1,23 +1,16 @@
 package com.sundaytoz.anetest  
 {
-	import com.dynamicflash.util.Base64;
 	import com.sundaytoz.anemaker.AndroidExtension;
-	import com.sundaytoz.anemaker.events.ImageResultEvent;
 	import com.sundaytoz.anetest.layer.DeviceInfoLayer;
 	import com.sundaytoz.anetest.layer.ImageLayer;
 	
 	import flash.desktop.NativeApplication;
 	import flash.display.Bitmap;
-	import flash.display.BitmapData;
-	import flash.display.Loader;
-	import flash.display.LoaderInfo;
 	import flash.display.Sprite;
 	import flash.display.StageAlign;
 	import flash.display.StageScaleMode;
-	import flash.events.Event;
 	import flash.events.KeyboardEvent;
 	import flash.ui.Keyboard;
-	import flash.utils.ByteArray;
 	
 	
 	public class ANETester extends Sprite
