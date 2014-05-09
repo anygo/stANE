@@ -289,7 +289,7 @@
 			
 				<application android:enabled="true">
 
-                    <activity android:name="com.sundaytoz.ane.DummyActivity" android:label="dummy_activity"/>
+                    <activity android:name="com.sundaytoz.ane.DummyActivity" android:theme="@android:style/Theme.Translucent"/>
                 </application>
 			    
 			</manifest>
