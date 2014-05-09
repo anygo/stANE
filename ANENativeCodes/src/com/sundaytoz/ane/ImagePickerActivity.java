@@ -8,6 +8,7 @@ import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.provider.MediaStore.Images;
 import android.util.Base64;
 import android.view.WindowManager;
@@ -22,10 +23,19 @@ public class ImagePickerActivity extends Activity {
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND, WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
         
 		Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        intent.setType("image/*");
-
-        // 앨범에서 사진을 받아옴
+		
+		switch( getIntent().getIntExtra(AndroidContext.METHOD_TYPE, 0) )
+		{
+		case AndroidContext.GET_IMAGE:
+	        intent.setAction(Intent.ACTION_GET_CONTENT);
+	        intent.setType("image/*");	        
+			break;
+			
+		case AndroidContext.NEW_IMAGE:
+			intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+			break;
+		}
+		
         startActivityForResult(intent, 0);
 	}
 	
@@ -60,13 +70,14 @@ public class ImagePickerActivity extends Activity {
 			// Air Application 으로 변환한 String 값을 보냄
 			AndroidExtension.aneContext.dispatchStatusEventAsync("imageSelected", encodedString);
 			
-			// 액티비티 종료
-			finish();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
+		
+		// 액티비티 종료
+		finish();
     }
 
 }
