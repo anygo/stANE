@@ -6,19 +6,21 @@ import com.adobe.fre.FREExtension;
 public class AndroidExtension implements FREExtension {
 			
 	public static AndroidContext aneContext;
+
 	@Override
-	public FREContext createContext(String arg0) {
+	public FREContext createContext(String arg0)
+	{
 		aneContext = new AndroidContext();
-		
 		return aneContext ;
 	}
 
 	@Override
-	public void dispose() {
+	public void dispose() 
+	{
+		aneContext = null;
 	}
 
 	@Override
-	public void initialize() {
-	}
+	public void initialize() {}
 	
 }

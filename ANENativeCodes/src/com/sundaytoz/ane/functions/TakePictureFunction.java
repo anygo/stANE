@@ -8,10 +8,9 @@ import com.sundaytoz.ane.AndroidExtension;
 public class TakePictureFunction implements FREFunction {
 
 	@Override
-	public FREObject call(FREContext arg0, FREObject[] arg1) {
-
+	public FREObject call(FREContext arg0, FREObject[] arg1)
+	{
 		AndroidExtension.aneContext.takePicture();
-		
 		return null;
 	}
 

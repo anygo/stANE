@@ -23,7 +23,7 @@ public class AndroidContext extends FREContext
 	@Override
 	public void dispose() 
 	{
-
+		AndroidExtension.aneContext = null;
 	}
 
 	@Override
@@ -40,13 +40,19 @@ public class AndroidContext extends FREContext
 		return map;
 	}
 	
+	/**
+	 * ImagePickerActivity 로 이동해서 사진을 가져오는 Intent 를 날립니다.
+	 */
 	public void getImageFromAlbum()
 	{
 		Intent intent = new Intent(getActivity().getApplicationContext(), ImagePickerActivity.class);
 		intent.putExtra(METHOD_TYPE, GET_IMAGE);
 		getActivity().startActivity(intent);
 	}
-	
+
+	/**
+	 * ImagePickerActivity 로 이동해서 새롭게 사진을 찍는 Intent 를 날립니다.
+	 */	
 	public void takePicture()
 	{
 		Intent intent = new Intent(getActivity().getApplicationContext(), ImagePickerActivity.class);
