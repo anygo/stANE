@@ -23,9 +23,15 @@ package com.sundaytoz.anemaker
 			}
 		}
 		
+		/**
+		 * Native 단에서 dispatchStatusEventAsync 를 이용해 보낸 이벤트를 받는 리스너입니다.
+		 */
 		private function onStatus( event:StatusEvent ):void {
+			
+			// 새롭게 사진을 찍거나 앨범에서 선택했을 때 
 			if(event.code == "imageSelected")
 			{
+				// 사진 byte array String 을 담은 이벤트를 생성합니다.
 				dispatchEvent( new ImageResultEvent( ImageResultEvent.IMAGE_SELECTED, event.level, false, false ) );
 			}
 		}

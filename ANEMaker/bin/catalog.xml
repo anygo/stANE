@@ -10,7 +10,7 @@
   </features>
   <libraries>
     <library path="library.swf">
-      <script name="com/sundaytoz/anemaker/AndroidExtension" mod="1399626178577" signatureChecksum="585073961" >
+      <script name="com/sundaytoz/anemaker/AndroidExtension" mod="1399630390375" signatureChecksum="585073961" >
         <def id="com.sundaytoz.anemaker:AndroidExtension" /> 
         <dep id="trace" type="e" /> 
         <dep id="flash.events:StatusEvent" type="e" /> 
@@ -23,19 +23,19 @@
         <dep id="AS3" type="n" /> 
         <dep id="flash.events:EventDispatcher" type="i" /> 
       </script>
-      <script name="_f307db22570ff59a7f09665f844cd5306a695b7e4888025bb57461a6613274d6_flash_display_Sprite" mod="1399626178892" signatureChecksum="4128798755" >
+      <script name="_f307db22570ff59a7f09665f844cd5306a695b7e4888025bb57461a6613274d6_flash_display_Sprite" mod="1399630390618" signatureChecksum="4128798755" >
         <def id="_f307db22570ff59a7f09665f844cd5306a695b7e4888025bb57461a6613274d6_flash_display_Sprite" /> 
         <dep id="flash.system:Security" type="e" /> 
         <dep id="AS3" type="n" /> 
         <dep id="flash.display:Sprite" type="i" /> 
       </script>
-      <script name="com/sundaytoz/anemaker/events/ImageResultEvent" mod="1399624802686" signatureChecksum="2949338025" >
+      <script name="com/sundaytoz/anemaker/events/ImageResultEvent" mod="1399630290165" signatureChecksum="2949338025" >
         <def id="com.sundaytoz.anemaker.events:ImageResultEvent" /> 
         <dep id="AS3" type="n" /> 
         <dep id="flash.events:Event" type="i" /> 
       </script>
       <digests>
-        <digest type="SHA-256" signed="false" value="fd57338d0d9b701690e5196c2d5d22ab6e63c961fa7926188ea1b2bb6d03a28e"   />
+        <digest type="SHA-256" signed="false" value="d44c689b98379c57da6f46a798e620619fc94bbae1a8fcc123214717a028d3da"   />
       </digests>
     </library>
   </libraries>
