@@ -57,5 +57,11 @@ package com.sundaytoz.anemaker
 		{
 			_context.call("getImageFromAlbum");
 		}
+		
+		
+		public function takePicture():void
+		{
+			_context.call("takePicture");
+		}
 	}
 }
