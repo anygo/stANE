@@ -24,18 +24,10 @@ package com.sundaytoz.anemaker
 		}
 		
 		private function onStatus( event:StatusEvent ):void {
-						
-			if( event.code == "debugging" )
+			if(event.code == "imageSelected")
 			{
-				trace(event.level);
-				return;
-				
+				dispatchEvent( new ImageResultEvent( ImageResultEvent.IMAGE_SELECTED, event.level, false, false ) );
 			}
-			
-			var result:String = event.level;
-			trace(result);
-			
-			dispatchEvent( new ImageResultEvent( ImageResultEvent.IMAGE_SELECTED, result, false, false ) );
 		}
 		
 		
@@ -56,6 +48,11 @@ package com.sundaytoz.anemaker
 			return _context.call("showDeviceInfo") as Array;
 		}
 		
+		
+		/**
+		 * 사용자의 휴대폰 앨범에서 사진을 선택하면 해당 사진을 불러옵니다. 
+		 * 불러온 이미지정보는 ImageResultEvent.IMAGE_SELECTED 이벤트를 통해서 전달됩니다.
+		 */
 		public function getImageFromAlbum():void
 		{
 			_context.call("getImageFromAlbum");
