@@ -16,12 +16,12 @@ package com.sundaytoz.anetest.utils
 			_extension = new AndroidExtension();
 		}
 		
-//		public function takeNewPicture(listener:Function):void
-//		{
-//			_extension.addEventListener(ImageResultEvent.PICTURE_TAKEN, listener);
-//			
-//			_extension.takePicture();
-//		}
+		public function takeNewPicture(listener:Function):void
+		{
+			_extension.addEventListener(ImageResultEvent.IMAGE_SELECTED, listener);
+			
+			_extension.takePicture();
+		}
 		
 		public function showAlbum(listener:Function):void
 		{			

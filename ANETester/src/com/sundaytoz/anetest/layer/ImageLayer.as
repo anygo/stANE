@@ -63,7 +63,12 @@ package com.sundaytoz.anetest.layer
 		
 		private function onClickCameraButton(event:MouseEvent):void
 		{
+			if( _imagePicker == null )
+			{
+				_imagePicker = new ImagePicker();
+			}
 			
+			_imagePicker.takeNewPicture(onChangedImage);
 		}
 		
 		/**
