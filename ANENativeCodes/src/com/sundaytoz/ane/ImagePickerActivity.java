@@ -12,7 +12,7 @@ import android.provider.MediaStore.Images;
 import android.util.Base64;
 import android.view.WindowManager;
 
-public class DummyActivity extends Activity {
+public class ImagePickerActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

@@ -34,7 +34,7 @@ public class AndroidContext extends FREContext {
 	{
         dispatchStatusEventAsync("debugging", "getImageFromAlbum()");
 
-		Intent intent = new Intent(getActivity().getApplicationContext(), DummyActivity.class);
+		Intent intent = new Intent(getActivity().getApplicationContext(), ImagePickerActivity.class);
 		getActivity().startActivity(intent);
 	}
 
