@@ -1,0 +1,13 @@
+<extension xmlns="http://ns.adobe.com/air/extension/3.1">
+    <id>com.sundaytoz.ane.ANEMaker</id>
+    <versionNumber>1.0.0</versionNumber>
+    <platforms>
+        <platform name="Android-ARM">
+            <applicationDeployment>
+                <nativeLibrary>AndroidExtension.jar</nativeLibrary>
+                <initializer>com.sundaytoz.ane.AndroidExtension</initializer>
+                <finalizer>com.sundaytoz.ane.AndroidExtension</finalizer>
+             </applicationDeployment>
+        </platform>
+    </platforms>
+</extension>
