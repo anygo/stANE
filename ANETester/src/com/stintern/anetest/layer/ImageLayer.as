@@ -1,9 +1,9 @@
-package com.sundaytoz.anetest.layer
+package com.stintern.anetest.layer
 {
 	import com.dynamicflash.util.Base64;
 	import com.sundaytoz.anemaker.events.ImageResultEvent;
-	import com.sundaytoz.anetest.utils.ImagePicker;
-	import com.sundaytoz.anetest.utils.Resources;
+	import com.stintern.anetest.utils.ImagePicker;
+	import com.stintern.anetest.utils.Resources;
 	
 	import flash.display.Bitmap;
 	import flash.display.BitmapData;

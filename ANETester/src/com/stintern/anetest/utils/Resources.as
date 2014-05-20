@@ -1,4 +1,4 @@
-package com.sundaytoz.anetest.utils
+package com.stintern.anetest.utils
 {
 	public class Resources
 	{

@@ -1,4 +1,4 @@
-package com.sundaytoz.anetest.utils
+package com.stintern.anetest.utils
 {
 	import com.sundaytoz.anemaker.AndroidExtension;
 	import com.sundaytoz.anemaker.events.ImageResultEvent;

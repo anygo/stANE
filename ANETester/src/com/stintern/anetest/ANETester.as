@@ -1,8 +1,8 @@
-package com.sundaytoz.anetest  
+package com.stintern.anetest  
 {
 	import com.sundaytoz.anemaker.AndroidExtension;
-	import com.sundaytoz.anetest.layer.DeviceInfoLayer;
-	import com.sundaytoz.anetest.layer.ImageLayer;
+	import com.stintern.anetest.layer.DeviceInfoLayer;
+	import com.stintern.anetest.layer.ImageLayer;
 	
 	import flash.desktop.NativeApplication;
 	import flash.display.Bitmap;

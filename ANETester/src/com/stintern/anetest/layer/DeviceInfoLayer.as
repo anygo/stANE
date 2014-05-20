@@ -1,6 +1,6 @@
-package com.sundaytoz.anetest.layer
+package com.stintern.anetest.layer
 {
-	import com.sundaytoz.anetest.utils.DeviceInfo;
+	import com.stintern.anetest.utils.DeviceInfo;
 	
 	import flash.display.Sprite;
 	import flash.text.TextField;
