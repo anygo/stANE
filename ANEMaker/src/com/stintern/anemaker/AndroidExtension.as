@@ -1,6 +1,6 @@
-package com.sundaytoz.anemaker
+package com.stintern.anemaker
 {
-	import com.sundaytoz.anemaker.events.ImageResultEvent;
+	import com.stintern.anemaker.events.ImageResultEvent;
 	
 	import flash.events.EventDispatcher;
 	import flash.events.StatusEvent;
