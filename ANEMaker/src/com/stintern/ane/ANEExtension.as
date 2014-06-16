@@ -1,12 +1,12 @@
-package com.sundaytoz.ane
+package com.stintern.ane
 {
 	import flash.external.ExtensionContext;
 
-	public class DeviceExtension
+	public class ANEExtension
 	{
 		private var _context:ExtensionContext;
 		
-		public function DeviceExtension()
+		public function ANEExtension()
 		{
 			try
 			{
