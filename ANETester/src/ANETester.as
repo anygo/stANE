@@ -1,6 +1,6 @@
 package
 {
-	import com.sundaytoz.ane.DeviceExtension;
+	import com.stintern.ane.ANEExtension;
 	
 	import flash.desktop.NativeApplication;
 	import flash.display.Sprite;
@@ -11,7 +11,7 @@ package
 	
 	public class ANETester extends Sprite
 	{
-		private var _deviceExtension:DeviceExtension;
+		private var _aneExtension:ANEExtension;
 		
 		public function ANETester()
 		{
@@ -21,7 +21,7 @@ package
 			stage.align = StageAlign.TOP_LEFT;
 			stage.scaleMode = StageScaleMode.NO_SCALE;
 			
-			_deviceExtension = new DeviceExtension();
+			_aneExtension = new ANEExtension();
 			
 			NativeApplication.nativeApplication.addEventListener(KeyboardEvent.KEY_DOWN, onKeyDown, false, 0, true);
 		}
@@ -33,7 +33,7 @@ package
 				event.preventDefault();
 				event.stopImmediatePropagation();
 				
-				_deviceExtension.showEndDlg();
+				_aneExtension.showEndDlg();
 			}
 		}
 	}

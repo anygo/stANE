@@ -10,7 +10,7 @@ package com.stintern.ane
 		{
 			try
 			{
-				_context = ExtensionContext.createExtensionContext("com.sundaytoz.ane.ANEMaker", null);
+				_context = ExtensionContext.createExtensionContext("com.stintern.ane.ANEExtension", null);
 			}
 			catch(e:Error)
 			{
@@ -20,7 +20,7 @@ package com.stintern.ane
 		
 		public function showEndDlg():void
 		{
-			_context.call("showEndDlg");
+			_context.call("backButton");
 		}
 	}
 }
