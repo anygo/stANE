@@ -18,9 +18,14 @@ package com.stintern.ane
 			}
 		}
 		
-		public function showEndDlg():void
+		public function getUserInfo():void
 		{
-			_context.call("backButton");
+			_context.call("userInfo");
 		}
+        
+        public function backButton():void
+        {
+            _context.call("backButton");
+        }
 	}
 }

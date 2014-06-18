@@ -10,10 +10,10 @@
             <arg value="-package"></arg>
             <arg value="-target"></arg>
             <arg value="ane"></arg>
-            <arg value="AndroidExtension.ane"></arg>
+            <arg value="stFacebookANE.ane"></arg>
             <arg value="extension.xml"></arg>
             <arg line="-swc ANEMaker.swc"/>
-            <arg line="-platform Android-ARM library.swf AndroidExtension.jar"/>
+            <arg line="-platform Android-ARM library.swf stFacebookANE.jar"/>
         </java>       
     </target> 
 </project>
